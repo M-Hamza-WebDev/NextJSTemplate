@@ -39,11 +39,11 @@ const Dashboard = () => {
     if (value) {
       if (name === "CategoryFilter") {
         const categoryData = tableData?.filter(
-          (item:any) => item.category === value
+          (item:any) => item.category.includes(value) 
         );
         setFilteredData(categoryData);
       } else if (name == "BrandFilter") {
-        const brandData = tableData?.filter((item:any) => item.brand == value);
+        const brandData = tableData?.filter((item:any) => item.brand.includes(value));
         setFilteredData(brandData);
       }
       else {
@@ -67,7 +67,7 @@ const Dashboard = () => {
         <div>
         <h1 className="pb-2 font-bold">Filter by category:</h1>
           <input
-          className="p-2 rounded-md focus:outline-none"
+          className="p-2 rounded-md focus:outline-none "
             type="text"
             placeholder="Category"
             value={categoryFilter}
