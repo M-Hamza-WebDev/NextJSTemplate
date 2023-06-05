@@ -67,7 +67,7 @@ console.log(productCounts,"pc");
             <h2 className="text-2xl font-bold">Dashboard Overview</h2>
             <p>Average Rating of all Products: {averageRating.toFixed(2)}</p>
           </div>
-          <div className="mb-4">
+           <div className="mb-4">
             <h3 className="text-xl font-bold">Product Count by Category</h3>
              <div className="w-full max-w-2xl">
                <Bar
