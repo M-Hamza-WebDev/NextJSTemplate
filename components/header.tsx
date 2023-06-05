@@ -4,7 +4,7 @@ import { SignIn, SignOut } from "./actions";
 import { getSession } from "next-auth/react";
 
 export default function Header() {
-  const [session, setSession] = useState(null);
+  const [session, setSession] = useState<any>(null);
 
   useEffect(() => {
     const getSessionData = async () => {

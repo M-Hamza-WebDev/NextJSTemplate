@@ -2,12 +2,20 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DashboardOverview from "./overview";
+import { Type } from "typescript";
+type DataType = {
+  // Define the properties and their types for your data structure
+  // Example:
+  id: number;
+  name: string;
+  // ...
+};
 const Dashboard = () => {
-  const [tableData, setTableData] = useState(null);
+  const [tableData, setTableData] = useState<string[]>([]);
   const [categoryFilter, setCategoryFilter] = useState("");
   const [brandFilter, setBrandFilter] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
+  const [filteredData, setFilteredData] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,11 +39,11 @@ const Dashboard = () => {
     if (value) {
       if (name === "CategoryFilter") {
         const categoryData = tableData?.filter(
-          (item) => item.category === value
+          (item:any) => item.category === value
         );
         setFilteredData(categoryData);
       } else if (name == "BrandFilter") {
-        const brandData = tableData?.filter((item) => item.brand == value);
+        const brandData = tableData?.filter((item:any) => item.brand == value);
         setFilteredData(brandData);
       }
       else {
@@ -43,7 +51,7 @@ const Dashboard = () => {
         // setFilteredData(anyData);
 
      
-          setFilteredData(filteredProducts);
+          // setFilteredData(filteredProducts);
       }
     } else {
       setFilteredData(tableData);
@@ -126,7 +134,7 @@ const Dashboard = () => {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {filteredData?.map((item, index) => {
+            {filteredData?.map((item:any, index) => {
               return (
                 <tr key={index}>
                   <td className="px-6 py-4 ">{item.title}</td>

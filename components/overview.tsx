@@ -18,14 +18,14 @@ const DashboardOverview = () => {
         const data = response.data.products;
 
         // Calculate average rating
-        const ratings = data.map((product) => product.rating);
-        const totalRating = ratings.reduce((sum, rating) => sum + rating, 0);
+        const ratings = data.map((product:any) => product.rating);
+        const totalRating = ratings.reduce((sum:any, rating:any) => sum + rating, 0);
         const avgRating = totalRating / ratings.length;
         setAverageRating(avgRating);
 
         // Calculate product counts by category
-        const categoryCounts = {};
-        data.forEach((product) => {
+        const categoryCounts:any = {};
+        data.forEach((product:any) => {
           const { category } = product;
           if (categoryCounts[category]) {
             categoryCounts[category] += 1;
@@ -76,7 +76,7 @@ console.log(productCounts,"pc");
                   scales: {
                     y: {
                       beginAtZero: true,
-                      precision: 0,
+                      // precision: 0,
                     },
                   },
                 }}
