@@ -38,7 +38,7 @@ export default function Header() {
             <span className={styles.notSignedInText}>
               You are not signed in
             </span>
-            <SignIn />
+             <SignIn />
           </>
         )}
       </div>
