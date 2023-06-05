@@ -69,8 +69,8 @@ console.log(productCounts,"pc");
           </div>
           <div className="mb-4">
             <h3 className="text-xl font-bold">Product Count by Category</h3>
-            <div className="w-full max-w-2xl">
-              <Bar
+             <div className="w-full max-w-2xl">
+               <Bar
                 data={chartData}
                 options={{
                   scales: {
