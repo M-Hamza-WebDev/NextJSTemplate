@@ -1,14 +1,24 @@
-import styles from "./header.module.css"
-import { SignIn, SignOut } from "./actions"
-import { unstable_getServerSession } from "next-auth/next"
+import { useState, useEffect } from "react";
+import styles from "./header.module.css";
+import { SignIn, SignOut } from "./actions";
+import { getSession } from "next-auth/react";
 
-export default async function Header() {
-  const session = await unstable_getServerSession()
+export default function Header() {
+  const [session, setSession] = useState(null);
 
-   return (
+  useEffect(() => {
+    const getSessionData = async () => {
+      const sessionData = await getSession();
+      setSession(sessionData);
+    };
+
+    getSessionData();
+  }, []);
+
+  return (
     <header className={styles.signedInStatus}>
       <div className={styles.loaded}>
-        {session?.user ? (
+        {session ? (
           <>
             {session.user.image && (
               <span
@@ -31,8 +41,7 @@ export default async function Header() {
             <SignIn />
           </>
         )}
-        
       </div>
     </header>
-  )
+  );
 }
