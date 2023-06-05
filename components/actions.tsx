@@ -4,8 +4,8 @@ import { signIn, signOut } from "next-auth/react"
 
 export function SignOut() {
   return (
-    <button className={styles.button} onClick={() => signOut()}>
-      Sign out
+     <button className={styles.button} onClick={() => signOut()}>
+       Sign out
     </button>
   )
 }
