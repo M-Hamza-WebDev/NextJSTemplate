@@ -27,15 +27,15 @@ const Dashboard = () => {
     fetchData();
   }, []);
 
-  function filterData(name, value) {
+  function filterData(name:string, value:any) {
     if (value) {
       if (name === "CategoryFilter") {
-        const categoryData = tableData.filter(
+        const categoryData = tableData?.filter(
           (item) => item.category === value
         );
         setFilteredData(categoryData);
       } else if (name == "BrandFilter") {
-        const brandData = tableData.filter((item) => item.brand == value);
+        const brandData = tableData?.filter((item) => item.brand == value);
         setFilteredData(brandData);
       }
       else {
@@ -53,6 +53,7 @@ const Dashboard = () => {
 
   return (
     <div className="mx-auto container">
+      
       <DashboardOverview />
       <div className="flex justify-between py-6">
         <div>
@@ -127,7 +128,7 @@ const Dashboard = () => {
           <tbody className="bg-white divide-y divide-gray-200">
             {filteredData?.map((item, index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <td className="px-6 py-4 ">{item.title}</td>
                   <td className="px-6 py-4 ">{item.description}</td>
                   <td className="px-6 py-4 ">{item.price}</td>
