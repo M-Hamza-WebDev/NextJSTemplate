@@ -41,7 +41,7 @@ const Dashboard = () => {
         setFilteredData(categoryData);
       } else if (name == "BrandFilter") {
         const brandData = tableData?.filter((item: any) =>
-          item.brand.toLowerCase().includes(value.toLowerCase)
+          item.brand.toLowerCase().includes(value.toLowerCase())
         );
         setFilteredData(brandData);
       } else {
