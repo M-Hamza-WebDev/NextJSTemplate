@@ -16,7 +16,7 @@ const Navigation = () => {
           >
             Home
           </Link>
-          <Link
+           <Link
             className={`${pathname?.includes("about") ? "text-[#346df1]" : "text-gray-300"} hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium`}
             href="/about"
           >
