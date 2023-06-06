@@ -58,18 +58,18 @@ console.log(productCounts,"pc");
   };
 
   return (
-    <div className="p-4">
+    <div className="">
       {isLoading ? (
-        <p>Loading...</p>
+        <p className="md:text-4xl text-2xl font-bold text-center mb-16">Loading Dashboard Overview...</p>
       ) : (
         <>
           <div className="mb-4">
-            <h2 className="text-2xl font-bold">Dashboard Overview</h2>
-            <p>Average Rating of all Products: {averageRating.toFixed(2)}</p>
+            <h2 className="md:text-4xl text-2xl font-bold text-center">Dashboard Overview</h2>
+            <p className="text-xl pt-8 text-center font-medium">Average Rating of all Products: <span className="text-gray-600 font-black">{averageRating.toFixed(2)}</span></p>
           </div>
-           <div className="mb-4">
-            <h3 className="text-xl font-bold">Product Count by Category</h3>
-             <div className="w-full max-w-2xl">
+           <div className="mb-4 md:mt-16 mt-10 mx-auto">
+            <h3 className="md:text-2xl text-lg font-bold text-center mb-6">Product Count by Category</h3>
+             <div className="w-full lg:max-w-2xl mx-auto ">
                <Bar
                 data={chartData}
                 options={{
