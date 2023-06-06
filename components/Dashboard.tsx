@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DashboardOverview from "./overview";
 
-import { useRouter } from "next/router";
+
 
 const Dashboard = () => {
-  // const router= useRouter
+ 
   
   const [tableData, setTableData] = useState<string[]>([]);
   const [categoryFilter, setCategoryFilter] = useState("");
@@ -23,7 +23,7 @@ const Dashboard = () => {
         setFilteredData(data.products);
 
         console.log(data);
-        // Handle the data or perform any further operations here
+      
       } catch (error) {
         console.error("Error fetching data:", error);
       }
