@@ -30,7 +30,7 @@ const Navigation = () => {
           </Link>
         </div>
       </div>
-    </nav>
+     </nav>
   );
 };
 
